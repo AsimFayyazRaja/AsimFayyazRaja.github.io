@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raja Asim — Data Engineer & AI Lead</title>
+<meta name="description" content="Raja Asim — Data Engineer and AI Lead in Rome. 7+ years building production data platforms, CDC pipelines, search infrastructure and ML services across AWS, GCP and Azure.">
+<meta property="og:title" content="Raja Asim — Data Engineer & AI Lead">
+<meta property="og:description" content="Production data platforms, real-time CDC, search at 600M-record scale, and ML systems from prototype to production.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23d63a2f'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='30' fill='white'>RA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf8; --surface:#ffffff; --surface-2:#f3f1ed; --text:#17161a; --muted:#5d5a63;
+  --faint:#8d8994; --line:#e6e2dc; --accent:#d63a2f; --accent-soft:#fbe9e7; --ok:#1f7a4d;
+  --shadow:0 1px 2px rgba(20,16,12,.04),0 8px 24px rgba(20,16,12,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#111014; --surface:#18171c; --surface-2:#211f26; --text:#f1eff4; --muted:#aaa6b2;
+    --faint:#7b7784; --line:#2c2a33; --accent:#ff6a5c; --accent-soft:#3a1d1b; --ok:#4fc58a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#111014; --surface:#18171c; --surface-2:#211f26; --text:#f1eff4; --muted:#aaa6b2;
+  --faint:#7b7784; --line:#2c2a33; --accent:#ff6a5c; --accent-soft:#3a1d1b; --ok:#4fc58a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;letter-spacing:-.02em;text-decoration:none}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:22px;align-items:center}
+.links a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+.links a:hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px}
+@media (max-width:760px){.links a.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--ok);background:color-mix(in srgb,var(--ok) 12%,transparent);padding:6px 12px;border-radius:999px}
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok)}
+h1{font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-.04em;font-weight:800;margin:22px 0 18px}
+h1 .thin{font-weight:400;color:var(--muted)}
+.role{font-size:clamp(18px,2.4vw,22px);font-weight:600;color:var(--accent);margin-bottom:18px}
+.lede{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:720px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-1px)}
+.socials{display:flex;flex-wrap:wrap;gap:18px;margin-top:28px;font-size:14px;color:var(--muted)}
+.socials a{text-decoration:none;border-bottom:1px solid var(--line)}
+.socials a:hover{color:var(--text);border-color:var(--accent)}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:16px 0 0}
+.stat{background:var(--surface);padding:24px 22px}
+.stat b{display:block;font-size:clamp(26px,3.6vw,36px);letter-spacing:-.03em;font-weight:800;line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:72px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px}
+.sec-head .num{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--accent)}
+h2{font-size:clamp(26px,3.4vw,34px);letter-spacing:-.03em;font-weight:800}
+.sec-sub{color:var(--muted);margin:-14px 0 30px;max-width:680px}
+
+/* case studies */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media (max-width:820px){.cases{grid-template-columns:1fr}}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.case .where{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.case h3{font-size:19px;letter-spacing:-.02em;margin:8px 0 10px;line-height:1.3}
+.case p{color:var(--muted);font-size:15px}
+.metric{display:flex;align-items:baseline;gap:10px;margin:16px 0 4px}
+.metric b{font-size:30px;font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.metric span{font-size:13px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:18px}
+.tag{font-family:"JetBrains Mono",monospace;font-size:11.5px;background:var(--surface-2);color:var(--muted);padding:4px 9px;border-radius:6px}
+.proof{font-size:13px;color:var(--faint);margin-top:12px;border-top:1px dashed var(--line);padding-top:12px}
+.proof a{color:var(--accent);text-decoration:none;font-weight:600}
+
+/* research */
+.pubs{display:grid;gap:14px}
+.pub{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.pub .yr{font-family:"JetBrains Mono",monospace;color:var(--accent);font-size:14px;padding-top:2px}
+.pub h3{font-size:17px;letter-spacing:-.01em;line-height:1.35}
+.pub p{color:var(--muted);font-size:14px;margin-top:6px}
+.pub .award{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:#8a5a00;background:#fff3d6;padding:3px 9px;border-radius:999px}
+:root[data-theme="dark"] .pub .award{color:#ffd27a;background:#3a2e12}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pub .award{color:#ffd27a;background:#3a2e12}}
+.pub .go{display:flex;flex-direction:column;gap:6px;text-align:right}
+.pub .go a{font-size:13px;font-weight:600;color:var(--accent);text-decoration:none;white-space:nowrap}
+@media (max-width:700px){.pub{grid-template-columns:1fr;gap:8px}.pub .go{text-align:left;flex-direction:row;gap:16px}}
+
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.repos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.repos{grid-template-columns:1fr}}
+.repo{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:border-color .15s}
+.repo:hover{border-color:var(--accent)}
+.repo h3{font-family:"JetBrains Mono",monospace;font-size:14px;font-weight:500;word-break:break-word}
+.repo p{font-size:14px;color:var(--muted);flex:1}
+.repo .meta{font-size:12px;color:var(--faint);display:flex;gap:14px}
+
+/* timeline */
+.tl{position:relative;border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 34px 30px}
+.job::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job.past::before{border-color:var(--faint)}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px}
+.job h3{font-size:18px;letter-spacing:-.02em}
+.job h3 small{font-weight:500;color:var(--muted);font-size:15px}
+.job .when{font-size:13px;color:var(--faint);font-family:"JetBrains Mono",monospace}
+.job ul{margin:10px 0 0 18px;color:var(--muted);font-size:15px}
+.job li{margin:4px 0}
+details.more{margin-top:6px}
+details.more summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:15px;padding:8px 0 20px 30px;list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media (max-width:760px){.skills{grid-template-columns:1fr}}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.skill h3{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--faint);margin-bottom:10px}
+.skill .tags{padding-top:0}
+
+/* creds */
+.creds{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:820px){.creds{grid-template-columns:1fr}}
+.cred{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.cred b{font-size:24px;letter-spacing:-.02em;display:block}
+.cred p{color:var(--muted);font-size:14px;margin-top:4px}
+.cred a{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--accent);text-decoration:none}
+
+/* contact */
+.contact{background:var(--text);color:var(--bg);border-radius:22px;padding:56px 40px;text-align:center}
+.contact h2{color:var(--bg)}
+.contact p{opacity:.75;margin:12px auto 28px;max-width:560px}
+.contact .btn{background:var(--bg);color:var(--text);border-color:var(--bg)}
+.contact .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.contact .cta{justify-content:center}
+@media (max-width:600px){.contact{padding:40px 20px}}
+footer{padding:36px 0 48px;color:var(--faint);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">Raja<span>.</span>Asim</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#research" class="hide-sm">Research</a>
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle dark mode">◐</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="top">
+  <span class="eyebrow">Rome, Italy · Open to remote opportunities</span>
+  <h1>Raja Asim<br><span class="thin">builds data systems that hold up in production.</span></h1>
+  <div class="role">Data Engineer · AI Lead · MLOps</div>
+  <p class="lede">7+ years designing and operating production data platforms, real-time CDC pipelines, search infrastructure across hundreds of millions of records, and ML services, from first prototype to on-call reliability. I've led engineering work and technical teams, interviewed candidates and reviewed system designs, and delivered 100+ freelance projects across AWS, GCP and Azure.</p>
+  <div class="cta">
+    <a class="btn primary" href="mailto:raja.asim.fayyaz@gmail.com">✉ Get in touch</a>
+  </div>
+  <div class="socials">
+    <a href="https://www.linkedin.com/in/asim-raja-629561180/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/AsimFayyazRaja" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://stackoverflow.com/users/5220257/asim" target="_blank" rel="noopener">Stack Overflow</a>
+    <a href="https://www.fiverr.com/rajaasim542" target="_blank" rel="noopener">Fiverr</a>
+  </div>
+
+  <div class="stats" style="margin-top:56px">
+    <div class="stat"><b>~600M</b><span>records in production search I operate</span></div>
+    <div class="stat"><b>8.5×</b><span>faster geo search (19.6s → 2.3s)</span></div>
+    <div class="stat"><b>100+</b><span>freelance projects · 100% JSS · 4.9★</span></div>
+    <div class="stat"><b>20%</b><span>AWS cost cut delivered for ENEL</span></div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">01</span><h2>Selected work</h2></div>
+    <p class="sec-sub">Production systems, each with a measured outcome. Employer work is described at the level my employers allow. Public proof is linked wherever it exists.</p>
+
+    <div class="cases">
+      <article class="case">
+        <div class="where">Instantly · B2B search platform</div>
+        <h3>Real-time PostgreSQL → Elasticsearch CDC at 600M-record scale</h3>
+        <p>Built and operate change-data-capture from PostgreSQL into Elasticsearch with Kafka, Debezium and Flink SQL, carrying inserts, updates and deletes with low latency. Added version-aware writes keyed on PostgreSQL log sequence numbers (LSNs) so stale stream or backfill events can never overwrite newer data. During live cluster incidents I ran replay and recovery and confirmed that every affected event was recovered.</p>
+        <div class="metric"><b>~600M</b><span>lead records kept in sync</span></div>
+        <div class="tags"><span class="tag">Kafka</span><span class="tag">Debezium</span><span class="tag">Flink SQL</span><span class="tag">Elasticsearch</span><span class="tag">PostgreSQL</span><span class="tag">AWS Glue</span></div>
+      </article>
+
+      <article class="case">
+        <div class="where">Instantly · Search performance</div>
+        <h3>Distributed geospatial search: 19.6s → 2.3s</h3>
+        <p>Diagnosed slow location-filtered searches down to oversized polygon query payloads. Shrank the payloads about 16× with no change to the result set, which brought a representative search from 19.6 seconds to 2.3.</p>
+        <div class="metric"><b>8.5×</b><span>latency improvement · ~16× smaller payloads</span></div>
+        <div class="tags"><span class="tag">Elasticsearch geo</span><span class="tag">Query optimisation</span><span class="tag">Python</span></div>
+      </article>
+
+      <article class="case">
+        <div class="where">Instantly · AI / retrieval</div>
+        <h3>Company lookalikes with embeddings and entity matching</h3>
+        <p>Worked with ML and product teams on entity matching, reverse lookups and embedding-based similarity retrieval for company discovery. I measured every change in a production-oriented pilot rather than reporting offline scores.</p>
+        <div class="metric"><b>3 → 9</b><span>median peer coverage in a measured pilot</span></div>
+        <div class="tags"><span class="tag">Embeddings</span><span class="tag">kNN</span><span class="tag">Entity resolution</span><span class="tag">OpenAI</span></div>
+      </article>
+
+      <article class="case">
+        <div class="where">IDPrivacy · AI engineering</div>
+        <h3>Privacy-first RAG over user files and SaaS sources</h3>
+        <p>Built retrieval pipelines that connect Google Drive, Dropbox, uploaded files and app metadata to private RAG workflows. Event-driven ingestion on Pub/Sub and Dataflow, BigQuery models with reverse ETL, and services on Kubernetes and Cloud Run with automated health and restart handling.</p>
+        <div class="metric"><b>RAG</b><span>private retrieval to production</span></div>
+        <div class="tags"><span class="tag">GCP Pub/Sub</span><span class="tag">Dataflow</span><span class="tag">BigQuery</span><span class="tag">Kubernetes</span><span class="tag">LLMs</span></div>
+      </article>
+
+      <article class="case">
+        <div class="where">Energy4Life · Lead role</div>
+        <h3>Leading AWS data & ML platform delivery</h3>
+        <p>Architect Glue and PySpark pipelines orchestrated with Step Functions and Lambda. Own automated data-quality and reconciliation controls for completeness, duplicates, schema compatibility and source-to-target consistency. Take models into production with FastAPI, SageMaker and GitHub Actions CI/CD.</p>
+        <div class="metric"><b>Lead</b><span>ML/Data Engineer · Aug 2024 – present</span></div>
+        <div class="tags"><span class="tag">AWS Glue</span><span class="tag">PySpark</span><span class="tag">Step Functions</span><span class="tag">SageMaker</span><span class="tag">FastAPI</span></div>
+      </article>
+
+      <article class="case">
+        <div class="where">Pi School of AI × ENEL</div>
+        <h3>Cutting cloud spend with forecasting & anomaly detection</h3>
+        <p>On a full scholarship I ingested and analysed about 450 GB of AWS utilisation data. Built forecasting and anomaly-detection models (Random Forests, LSTMs, autoencoders) and an ensemble recommender that proposed infrastructure changes.</p>
+        <div class="metric"><b>20%</b><span>reduction in ENEL's AWS infrastructure cost</span></div>
+        <div class="tags"><span class="tag">LSTM</span><span class="tag">Autoencoders</span><span class="tag">Forecasting</span><span class="tag">AWS</span></div>
+        <div class="proof">Proof: <a href="https://picampus-school.com/programme/school-of-artificial-intelligence/" target="_blank" rel="noopener">Pi School of AI</a> full-scholarship programme, 2019</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">02</span><h2>Research & publications</h2></div>
+    <p class="sec-sub">Peer-reviewed work, with the code that backs it.</p>
+    <div class="pubs">
+      <div class="pub">
+        <div class="yr">2019</div>
+        <div>
+          <h3>Classifying Alcoholics and Control Patients Using Deep Learning and Peak Visualization Method</h3>
+          <p>R. Asim Fayyaz, M. Maqbool, M. Saeed · ICVISP 2019, ACM. Introduces the Peak Visualization Method for time-domain EEG features. The LSTM classifier reached 93% accuracy.</p>
+          <span class="award">🏆 Best Student Paper · WSPML 2019, Bangkok</span>
+        </div>
+        <div class="go">
+          <a href="https://dl.acm.org/doi/10.1145/3387168.3389119" target="_blank" rel="noopener">ACM DOI ↗</a>
+          <a href="https://github.com/AsimFayyazRaja/EEG_Alcoholic-vs-Control" target="_blank" rel="noopener">Code ↗</a>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2020</div>
+        <div>
+          <h3>Textile Design Generation Using GANs</h3>
+          <p>R. Asim Fayyaz, M. Maqbool, M. Hanif · IEEE CCECE 2020, Canada. Compares WGAN-GP, DCGAN and CVAE for generating textile designs, plus style transfer. Data cleaning and pseudo-labelling improved the state of the art in pattern classification by 2%.</p>
+        </div>
+        <div class="go">
+          <a href="https://www.semanticscholar.org/paper/Textile-Design-Generation-Using-GANs-Fayyaz-Maqbool/73a51cf2c6ec50a735077584e9199d952794aec7" target="_blank" rel="noopener">Paper ↗</a>
+          <a href="https://github.com/AsimFayyazRaja/Face_Images_GANs" target="_blank" rel="noopener">GAN code ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">03</span><h2>Open source</h2></div>
+    <p class="sec-sub">Selected public repositories. Live on <a href="https://github.com/AsimFayyazRaja" target="_blank" rel="noopener" style="color:var(--accent)">GitHub</a>.</p>
+    <div class="repos" id="repos">
+      <a class="repo" href="https://github.com/AsimFayyazRaja/NormalVSschizophrenia_Classification" target="_blank" rel="noopener"><h3>NormalVSschizophrenia_Classification</h3><p>Classifying schizophrenia patients from EEG signals with ML/DL models.</p><div class="meta"><span>Python</span><span>★ 8</span></div></a>
+      <a class="repo" href="https://github.com/AsimFayyazRaja/EEG_Alcoholic-vs-Control" target="_blank" rel="noopener"><h3>EEG_Alcoholic-vs-Control</h3><p>Code for the award-winning ICVISP 2019 EEG classification paper.</p><div class="meta"><span>Jupyter</span></div></a>
+      <a class="repo" href="https://github.com/AsimFayyazRaja/Deepspeech_Colab" target="_blank" rel="noopener"><h3>Deepspeech_Colab</h3><p>Training and inference for the DeepSpeech speech-to-text model on Colab GPUs.</p><div class="meta"><span>Jupyter</span><span>★ 2</span></div></a>
+      <a class="repo" href="https://github.com/AsimFayyazRaja/InfoSapienza_thesis" target="_blank" rel="noopener"><h3>InfoSapienza_thesis</h3><p>MSc AI & Robotics thesis work, Sapienza University of Rome.</p><div class="meta"><span>Python</span></div></a>
+      <a class="repo" href="https://github.com/AsimFayyazRaja/DPTTI_DeepLearning" target="_blank" rel="noopener"><h3>DPTTI_DeepLearning</h3><p>Detecting persuasion techniques in text and images (multimodal DL).</p><div class="meta"><span>Jupyter</span></div></a>
+      <a class="repo" href="https://github.com/AsimFayyazRaja/ScreenshotsClassifier_CNN" target="_blank" rel="noopener"><h3>ScreenshotsClassifier_CNN</h3><p>CNN that sorts screenshots into categories.</p><div class="meta"><span>Python</span><span>★ 3</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">04</span><h2>Experience</h2></div>
+    <div class="tl">
+      <div class="job">
+        <div class="job-head"><h3>Instantly <small>· ML / Data Engineer</small></h3><span class="when">Aug 2025 – Present · Remote</span></div>
+        <ul>
+          <li>Production data infrastructure for a B2B search platform with ~600M lead records in Elasticsearch: ingestion, enrichment, backfills and search reliability.</li>
+          <li>Real-time CDC from PostgreSQL with Kafka, Debezium and Flink SQL, using LSN-based version-aware writes and delete safeguards.</li>
+          <li>Python connectors and AWS Glue pipelines for third-party ingestion, reconciliation and large backfills that run alongside live traffic.</li>
+          <li>Monitoring, incident response, replay mechanisms and recovery procedures for the production Elasticsearch cluster.</li>
+          <li>Enrichment-vendor evaluations that quantify match rates, net-new contacts and coverage gaps before wider integration.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>Energy4Life <small>· Lead ML / Data Engineer</small></h3><span class="when">Aug 2024 – Present · Remote, UK</span></div>
+        <ul>
+          <li>Architect AWS Glue and PySpark pipelines with Step Functions and Lambda for ingestion, migration and ML workloads.</li>
+          <li>Automated data-quality and reconciliation controls. Production services on FastAPI, SageMaker, Kubernetes and Azure Functions.</li>
+        </ul>
+      </div>
+      <div class="job past">
+        <div class="job-head"><h3>IDPrivacy <small>· Data Engineer / AI Engineer</small></h3><span class="when">Jan 2025 – Sep 2025 · Remote</span></div>
+        <ul>
+          <li>Event-driven pipelines on Pub/Sub and Dataflow, BigQuery models and reverse ETL, and privacy-first RAG retrieval.</li>
+          <li>Infrastructure as Code, Jenkins CI/CD, and Kubernetes and Cloud Run services with automated health checks and restarts.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <div class="job-head"><h3>Upwork <small>· Freelance Data Engineer</small></h3><span class="when">Apr 2022 – Present</span></div>
+        <ul>
+          <li>30+ projects with Top Rated Plus status and a 100% Job Success Score. Databricks DLT, Azure Data Factory, BigQuery and data migrations with rollback plans.</li>
+          <li>Entity-resolution pipelines combining normalised identifiers, deterministic rules, fuzzy matching and similarity scoring.</li>
+        </ul>
+      </div>
+      <div class="job past">
+        <div class="job-head"><h3>SmartFab <small>· Data Engineer</small></h3><span class="when">Apr 2024 – Dec 2024 · Remote, Milan</span></div>
+        <ul>
+          <li>Apache Beam pipelines and a Grafana/Loki/Promtail observability stack. Evaluated fine-tuned Mistral and OpenAI models before integration.</li>
+        </ul>
+      </div>
+    </div>
+    <details class="more">
+      <summary>+ Show earlier roles (2017 – 2024)</summary>
+      <div class="tl">
+        <div class="job past">
+          <div class="job-head"><h3>Heuristiks <small>· Data Engineer</small></h3><span class="when">Feb 2023 – Mar 2024 · Lahore</span></div>
+          <ul><li>AWS Glue data lake pipelines, curated Athena datasets and Power BI reporting, plus FastAPI and DynamoDB microservices.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>Datrix Group <small>· Data Engineer</small></h3><span class="when">Jul 2022 – Feb 2023 · Milan</span></div>
+          <ul><li>Document-processing ML (classification, checkbox detection, extraction). YOLO inference on GCP Cloud Run. BERT, T5 and BART benchmarks.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>NUGenesis <small>· Machine Learning Engineer</small></h3><span class="when">Nov 2020 – Jul 2022 · Australia</span></div>
+          <ul><li>KYC and identity verification with OCR, document classification and selfie-to-passport face matching. Fraud and anomaly detection with PyOD and Isolation Forest.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>Piri.ai <small>· AI Engineer</small></h3><span class="when">Jul 2019 – Dec 2020 · USA</span></div>
+          <ul><li>NLP chatbots and QA systems with RASA, BERT and Hugging Face on AWS, deployed through Jenkins, Docker and ECS.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>Pi School of AI – ENEL <small>· AI Scholar</small></h3><span class="when">Apr 2019 – Jun 2019 · Rome</span></div>
+          <ul><li>Forecasting and anomaly detection on 450 GB of AWS utilisation data that contributed to a 20% infrastructure cost reduction.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>Fiverr <small>· Freelance Data Engineer / Data Scientist</small></h3><span class="when">Jun 2017 – Present</span></div>
+          <ul><li>80+ data, ML and AI projects with an average 4.9/5 rating.</li></ul>
+        </div>
+        <div class="job past">
+          <div class="job-head"><h3>FAST NUCES <small>· Data Scientist / Research Assistant</small></h3><span class="when">Aug 2018 – Jun 2019 · Lahore</span></div>
+          <ul><li>EEG feature engineering and ensemble models that raised classification accuracy by 2%. Best Student Paper at WSPML 2019.</li></ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">05</span><h2>Toolkit</h2></div>
+    <div class="skills">
+      <div class="skill"><h3>Data engineering</h3><div class="tags"><span class="tag">PySpark</span><span class="tag">AWS Glue</span><span class="tag">Kafka</span><span class="tag">Debezium</span><span class="tag">Flink</span><span class="tag">Airflow</span><span class="tag">Apache Beam</span><span class="tag">Dataflow</span><span class="tag">Databricks</span><span class="tag">dbt</span><span class="tag">BigQuery</span><span class="tag">Azure Data Factory</span></div></div>
+      <div class="skill"><h3>AI & ML</h3><div class="tags"><span class="tag">LLMs</span><span class="tag">RAG</span><span class="tag">Embeddings / kNN</span><span class="tag">LangChain</span><span class="tag">LlamaIndex</span><span class="tag">HuggingFace</span><span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span><span class="tag">OpenAI</span><span class="tag">Mistral</span></div></div>
+      <div class="skill"><h3>Cloud & MLOps</h3><div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">SageMaker</span><span class="tag">Vertex AI</span><span class="tag">Cloud Run</span><span class="tag">Lambda</span><span class="tag">CI/CD</span><span class="tag">IaC</span></div></div>
+      <div class="skill"><h3>Storage, search & languages</h3><div class="tags"><span class="tag">Elasticsearch</span><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">DynamoDB</span><span class="tag">Athena</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">C++</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials">
+  <div class="wrap">
+    <div class="sec-head"><span class="num">06</span><h2>Education & track record</h2></div>
+    <div class="creds">
+      <div class="cred"><b>MSc AI & Robotics</b><p>Sapienza University of Rome · 2021–2024 · Full scholarship</p></div>
+      <div class="cred"><b>BSc Computer Science</b><p>FAST NUCES, Lahore · 2015–2020 · Data Hackathon winner, 2018</p></div>
+      <div class="cred"><b>100+ client projects</b><p>Upwork Top Rated Plus, 100% JSS · Fiverr 4.9★ across 80+ projects</p><a href="https://www.fiverr.com/rajaasim542" target="_blank" rel="noopener">See Fiverr reviews ↗</a></div>
+    </div>
+    <p style="color:var(--muted);margin-top:22px;font-size:14px">Languages: English · Urdu · Italian</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Let's build something reliable.</h2>
+      <p>Open to Data Engineering, AI Lead and MLOps roles and to consulting on data platforms, real-time pipelines and production ML.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:raja.asim.fayyaz@gmail.com">raja.asim.fayyaz@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/asim-raja-629561180/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr">2026</span> Raja Asim · Rome, Italy</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('theme');
+  try{var t=localStorage.getItem('theme'); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
